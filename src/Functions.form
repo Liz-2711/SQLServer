@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Functions">
+  <grid id="27dc6" binding="panel" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="16" width="410" height="543"/>
+    </constraints>
+    <properties>
+      <background color="-855310"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <scrollpane id="d8737">
+        <constraints border-constraint="West"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="eaecb" class="javax.swing.JTree" binding="FuncionesArbol">
+            <constraints/>
+            <properties>
+              <preferredSize width="250" height="550"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="1dff8" class="javax.swing.JTextArea" binding="txtDescripcion">
+        <constraints border-constraint="Center"/>
+        <properties>
+          <text value="Descripcion..."/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
