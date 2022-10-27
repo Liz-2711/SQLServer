@@ -25,6 +25,7 @@
       <component id="1dff8" class="javax.swing.JTextArea" binding="txtDescripcion">
         <constraints border-constraint="Center"/>
         <properties>
+          <editable value="false"/>
           <text value="Descripcion..."/>
         </properties>
       </component>
