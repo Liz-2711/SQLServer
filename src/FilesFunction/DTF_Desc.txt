@@ -1,0 +1,16 @@
+Current_Timestamp Returns the current database system timestamp as a datetime value, without the database time zone offset;
+Dateadd() Adds a number (a signed integer) to a datepart of an input date, and returns a modified date/time value;
+Datediff() Returns the count (as a signed integer value) of the specified datepart boundaries crossed between the specified startdate and enddate;
+Datename() Returns a character string representing the specified datepart of the specified date;
+Datepart() Returns an integer representing the specified datepart of the specified date;
+Day() Returns an integer that represents the day (day of the month) of the specified date;
+Getdate() Returns the current database system timestamp as a datetime value without the database time zone offset. This value is derived from the operating system of the computer on which the instance of SQL Server is running;
+Getutcdate() Returns the current database system timestamp as a datetime value. The database time zone offset is not included. This value represents the current UTC time (Coordinated Universal Time). This value is derived from the operating system of the computer on which the instance of SQL Server is running;
+Isdate() Returns 1 if the expression is a valid datetime value, otherwise, 0;
+Month() Returns an integer that represents the month of the specified date;
+Sysdatetime() Returns a datetime2(7) value that contains the date and time of the computer on which the instance of SQL Server is running;
+Sysdatetimeoffset() Returns a datetimeoffset(7) value that contains the date and time of the computer on which the instance of SQL Server is running. The time zone offset is included;
+Sysutcdatetime() Returns a datetime2 value that contains the date and time of the computer on which the instance of SQL Server is running. The date and time is returned as UTC time (Coordinated Universal Time). The fractional second precision specification has a range from 1 to 7 digits. The default precision is 7 digits;
+Switchoffset() Returns a datetimeoffset value that is changed from the stored time zone offset to a specified new time zone offset;
+Todatetimeoffset() Returns a datetimeoffset value that is translated from a datetime2 expression;
+Year() Returns an integer that represents the year of the specified date;

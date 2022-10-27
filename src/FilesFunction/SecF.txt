@@ -1,0 +1,13 @@
+::fn_Trace_Geteventinfo();@Traceid (integer);Returns table.
+::fn_Trace_Getfilterinfo();@Traceid (integer);Returns table.
+::fn_Trace_Getinfo();@Traceid (integer);Returns table.
+::fn_Trace_Gettable();@Filename (nvarchar(256));@Numfiles (integer);Returns table.
+Has_Dbaccess();Database name (nvarchar(128));Returns integer.
+original_db_name();None;Returns sysname.
+Is_Member();Windows group name or SQL Server role name (nvarchar);Returns integer.
+Is_Srvrolemember();Role name (nvarchar(128));(optional) Login (nvarchar(128));Returns integer.
+Suser_Sid();(optional) Login (nvarchar(256));Returns varbinary(85).
+Suser_Sname();(optional) Login SID (varbinary(85));Returns nvarchar(256).
+User;None;Returns nvarchar.
+User_Id();(optional) User name (nvarchar(128));Returns integer.
+User_Name();(optional) User ID (integer);Returns nvarchar(128).

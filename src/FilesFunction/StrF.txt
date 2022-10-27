@@ -1,0 +1,26 @@
+Ascii();Expression (char or nvarchar);Returns integer.
+Char();Tinyint;Returns char(1).
+Charindex();Search expression (varchar);Expression to be searched (varchar);Start location (bigint);Returns integer or bigint.
+Difference();Expression (varchar);Expression (varchar);Returns integer.
+Left();Expression (varchar or nvarchar);Number of characters (integer);Returns varchar or nvarchar.
+Len();Expression (varchar or nvarchar);Returns integer or bigint.
+Lower();Expression (varchar or nvarchar);Returns varchar or nvarchar.
+Ltrim();Expression (varchar or nvarchar);Returns varchar or nvarchar.
+Nchar();Expression (integer);Returns nchar(1).
+Patindex();Search pattern literal (varchar or nvarchar);Expression to search (varchar or nvarchar);Returns integer or bigint.
+Quotename();Expression (nvarchar(128));(optional) Quote character (char(1));Returns nvarchar(258).
+Replace();Expression to be searched (varchar or nvarchar);Search expression (varchar or nvarchar);Replacement expression (varchar or nvarchar);Returns varchar or nvarchar.
+Replicate();Expression (varchar or nvarchar);Expression (bigint);Returns varchar or nvarchar.
+Reverse();Expression (varchar or nvarchar);Returns varchar or nvarchar.
+Right();Expression (varchar or nvarchar);Expression (bigint);Returns varchar or nvarchar.
+Rtrim();Expression (varchar or nvarchar);Returns varchar or nvarchar.
+Soundex();Expression (varchar);Returns varchar.
+Space();Expression (integer);Returns char.
+Str();Expression (float);(optional) Length (integer, default);(optional) Scale (integer, default);Returns char.
+String_Split();Input String (varchar or nvarchar);Separator (varchar or nvarchar);Returns table.
+Stuff();Expression to be searched (varchar, nvarchar or varbinary);Starting position (bigint);Number of characters (bigint);Replacement expression (varchar, nvarchar or varbinary);Returns varchar, nvarchar or varbinary.
+Substring(); Expression (varchar, nvarchar, text, ntext, varbinary or image);Starting position (bigint);Length (bigint);Returns varchar, nvarchar, text, ntext, varbinary or image.
+Unicode();Expression (nvarchar);Returns integer.
+Upper();Expression (varchar or nvarchar);Returns varchar or nvarchar.
+Trim();Expression (varchar or nvarchar);Returns varchar or nvarchar.
+ConcatWs();Separator (varchar or nvarchar);Expression (varchar or nvarchar);Expression (varchar or nvarchar);Returns varchar or nvarchar.

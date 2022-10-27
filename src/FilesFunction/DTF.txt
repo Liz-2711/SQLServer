@@ -1,0 +1,16 @@
+Current_Timestamp;None;Returns datetime.
+Dateadd();Date part (varchar);Increment (integer);Expression (datetime);Returns datetime.
+Datediff();Date part (varchar);Starting date (datetime);Ending date (datetime);Returns datetime.
+Datename();Date part (varchar);Expression (datetime);Returns varchar.
+Datepart();Date part (varchar);Expression (datetime);Returns integer.
+Day();Expression (datetime);Returns integer.
+Getdate();None;Returns datetime.
+Getutcdate();None;Returns datetime.
+Isdate();Expression (varchar);Returns integer.
+Month();Expression (datetime);Returns integer.
+Sysdatetime();None;Returns datetime(7).
+Sysdatetimeoffset();None;Returns datetimeoffset.
+Sysutcdatetime();None;Returns datetime2(7).
+Switchoffset();Expression (datetimeoffset);Time Zone (varchar);Returns datetimeoffset.
+Todatetimeoffset();Expression (datetime);Time Zone (varchar);Returns datetimeoffset.
+Year();Expression (datetime);Returns integer.

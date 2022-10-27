@@ -1,0 +1,23 @@
+Abs();Expression (exact numeric or approximate numeric);Returns the same type as the expression.
+Acos();Radians expression (float);Returns float.
+Asin();Radians expression (float);Returns float.
+Atan();Radians expression (float);Returns float.
+Atn2();Radians expression (float);Returns float.
+Ceiling();Expression (exact numeric or approximate numeric);Returns the same type as the expression.
+Cos();Radians expression (float);Returns float.
+Cot();Radians expression (float);Returns float.
+Degrees();Expression (exact numeric or approximate numeric);Returns the same type as the expression.
+Exp();Radians expression (float);Returns float.
+Floor();Expression (exact numeric or approximate numeric);Returns the same type as the expression.
+Log();Radians expression (float);Returns float.
+Log10();Radians expression (float);Returns float.
+Pi();None;Returns float.
+Power();Expression (exact numeric or approximate numeric);Power (exact numeric or approximate numeric);Returns the same type as the expression.
+Radians();Degrees expression (exact numeric or approximate numeric);Returns the same type as the expression in radians.
+Rand();(optional) Seed value (integer);Returns float.
+Round();Expression (exact numeric or approximate numeric);Precision (integer);(optional) Function (integer);Returns the same type as the expression.
+Sign();Expression (exact numeric or approximate numeric);Returns Bigint, integer, Money, Decimal or float.
+Sin();Radians expression (float);Returns float.
+Sqrt();Expression (float);Returns float.
+Square();Expression (float);Returns float.
+Tan();Radians expression (float);Returns float.

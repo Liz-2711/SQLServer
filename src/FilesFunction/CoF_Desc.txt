@@ -1,0 +1,16 @@
+ConnectionProperty() Returns a property value about the connection property;
+@@Datefirst Returns the current value of SET DATEFIRST, for a specific session;
+@@Dbts Returns the value of the current timestamp data type for the current database. The current database will have a guaranteed unique timestamp value;
+@@Langid Returns the local language identifier (ID) of the language that is currently being used;
+@@Language Returns the name of the language currently being used;
+@@Lock_Timeout Returns the current lock time-out setting in milliseconds for the current session;
+@@Max_Connections Returns the maximum number of simultaneous user connections allowed on an instance of SQL Server. The number returned is not necessarily the number currently configured;
+@@Max_Precision Returns the precision level used by decimal and numeric data types as currently set in the server;
+@@Nestlevel Returns the nesting level of the current stored procedure execution (initially 0) on the local server;
+@@Options Returns information about the current SET options;
+@@Remserver Returns the name of the remote SQL Server database server as it appears in the login record;
+@@Servername Returns the name of the local server that is running SQL Server;
+@@Servicename Returns the name of the registry key under which SQL Server is running. @@SERVICENAME returns 'MSSQLSERVER' if the current instance is the default instance, this function returns the instance name if the current instance is a named instance;
+@@Spid Returns the session ID of the current user process;
+@@Textsize Returns the current value of the TEXTSIZE option;
+@@Version Returns system and build information for the current installation of SQL Server;

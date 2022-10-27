@@ -1,0 +1,29 @@
+Col_Length();Table name (Nvarchar(128));Column name (Nvarchar(128));Returns integer.
+Col_Name();Table Id (integer);Column Id (integer);Returns nvarchar(128).
+Columnproperty();Table or Procedure Id (integer);Column name (Nvarchar(128));Property name (varchar);Returns integer.
+Databaseproperty();Database name (nvarchar(128));Property name (varchar);Returns integer.
+Databasepropertyex();Database name (nvarchar(128));Property name (varchar);Returns integer.
+Db_Id();(optional) Database name (nvarchar(128));Returns integer.
+Db_Name();(optional) Database ID (integer);Returns nvarchar(128).
+File_Id();File name (nvarchar(128));Returns smallint.
+File_Name();File ID (smallint);Returns nvarchar(128).
+Filegroup_Id();Filegroup name (nvarchar(128));Returns smallint.
+Filegroup_Name();Filegroup ID (smallint);Returns nvarchar(128).
+Filegroupproperty();Filegroup name (nvarchar(128));Property name (varchar(128));Returns integer.
+Fileproperty();File name (nvarchar(128));Property name (varchar(128));Returns integer.
+::fn_Listextendedproperty();@name (nvarchar(128), default);@level0type (varchar(128), default);@level0name (nvarchar(128), default);@level1type (varchar(128), default);@level1name (nvarchar(128), default);@level2type (varchar(128), default);@level2name (nvarchar(128), default);Returns table.
+Fulltextcatalogproperty();Full text catalog name (nvarchar(128));Property name (varchar);Returns integer.
+Fulltextserviceproperty();Property name (varchar);Returns integer.
+Index_Col();Table name (nvarchar(128));Index Id (smallint);Key Id (tinyint);Returns nvarchar(256).
+Indexkey_Property();Table ID (int);Index ID (int);Key ID (int);Property name (varchar);Returns integer.
+Indexproperty();Table ID (int);Index name (nvarchar(128));Property name (varchar(128));Returns integer.
+Object_Id();Object name (nvarchar(128));Returns integer.
+Object_Name();Object ID (integer);Returns nvarchar(128).
+Objectproperty();Object ID (integer);Property name (varchar);Returns integer.
+Objectpropertyex();Object ID (integer);Property name (varchar);Returns: sql_variant.
+@@Procid;None;Returns integer.
+Sql_Variant_Property();Expression (sql_variant);Property name (varchar(128));Returns sql_variant.
+Typeproperty();Data type name (nvarchar(128));Property name (varchar(128));Returns integer.
+Change_tracking_current_version();None;Returns binary(10).
+Change_Tracking_Is_Column_In_Mask();Column Id;Columns changed data;Returns bit.
+Change_Tracking_Cleanup_Version();None;Returns binary(10).
