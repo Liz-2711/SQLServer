@@ -1,0 +1,1 @@
+Property OptionName (varchar);Returns sql_variant#None;Returns tinyint#None;Returns timestamp#None;Returns smallint#None;Returns varchar#None;Returns integer#None;Returns integer#None;Returns tinyint#None;Returns integer#None;Returns integer#None;Returns varchar(256)#None;Returns varchar#None;Returns varchar#None;Returns smallint#None;Returns integer#None;Returns varchar

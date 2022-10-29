@@ -1,0 +1,1 @@
+None;Returns HierarchyId#Child1 (HierarchyId);Child2 (HierarchyId);Returns HierarchyId#Parent (HierarchyId);Returns SqlBoolean#None;Returns SqlInt16#Ancestor Level (integer);Returns HierarchyId#Old Root (HierarchyId);New Root (HierarchyId);Returns HierarchyId#None;Returns String
