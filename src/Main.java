@@ -1,3 +1,5 @@
+import jdk.nashorn.internal.runtime.StoredScript;
+
 import java.sql.Connection;
 
 import java.sql.DriverManager;
@@ -10,8 +12,8 @@ public class Main {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-             JFrame frame= new tables();
-             frame.setSize(1000,1000);
+             JFrame frame= new Menu("guest");
+             frame.setSize(800,800);
              frame.setVisible(true);
             }
         });

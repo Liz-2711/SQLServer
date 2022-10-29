@@ -7,6 +7,7 @@
     </constraints>
     <properties>
       <background color="-14993330"/>
+      <font name="Brush Script MT" size="36" style="1"/>
     </properties>
     <border type="none"/>
     <children>
@@ -38,6 +39,7 @@
         </constraints>
         <properties>
           <background color="-12490366"/>
+          <font size="14" style="1"/>
         </properties>
       </component>
       <component id="f8030" class="javax.swing.JTextField" binding="textField1" default-binding="true">
@@ -48,6 +50,7 @@
         </constraints>
         <properties>
           <background color="-12490366"/>
+          <font size="14" style="1"/>
           <text value=""/>
         </properties>
       </component>
@@ -62,6 +65,7 @@
         </constraints>
         <properties>
           <background color="-9791317"/>
+          <font name="Forte" size="26" style="1"/>
           <foreground color="-9791317"/>
           <text value="SQL SERVER"/>
         </properties>

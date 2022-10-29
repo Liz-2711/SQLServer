@@ -11,29 +11,29 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Arrays;
 
-public class tables extends JFrame {
-    private JButton albums;
-    private JPanel panel1;
+public class TriggerLogs extends JFrame{
+    private JButton albumButton;
     private JTable table1;
-    private JButton trackButton;
-    private JButton playlistTrackButton;
-    private JButton playlistButton;
-    private JButton mediaTypeButton;
-    private JButton invoiceLineButton;
-    private JButton clearButton;
-    private JButton invoice;
-    private JButton genre;
-    private JButton employee;
-    private JButton customer;
-    private JButton artist;
+    private JButton borrarButton;
+    private JButton artistbttn;
+    private JButton customebttn;
+    private JButton employeebttn;
+    private JButton genrebttn;
+    private JButton invoicebttn;
+    private JButton invoiceLinebttn;
+    private JButton mediabttn;
+    private JButton playlistbttn;
+    private JButton playlistTrackbttn;
+    private JButton Trackbttn;
+    private JPanel panel1;
 
-    public tables(String user){
+
+    public TriggerLogs(String user){
 
         setContentPane(panel1);
 
-        albums.addActionListener(new ActionListener() {
+        albumButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 Connection con= null;/*
@@ -59,7 +59,7 @@ public class tables extends JFrame {
 
                     int count=0;
                     Statement st= con.createStatement();
-                    String query="select * from Album;";
+                    String query="select * from LogsAlbum;";
                     ResultSet rs = st.executeQuery(query);
                     ResultSetMetaData rsmd= rs.getMetaData();
                     DefaultTableModel model = (DefaultTableModel) table1.getModel();
@@ -71,20 +71,20 @@ public class tables extends JFrame {
                         //System.out.println(count);
                     }
                     model.setColumnIdentifiers(colName);
-                   int i =0;
-                   String data;
+                    int i =0;
+                    String data;
                     //String[] row;
-                  String[] row=new String[count];
-                   // System.out.println(count);
+                    String[] row=new String[count];
+                    // System.out.println(count);
                     while (rs.next()){
-                       // System.out.println(rs.getString(1));
-                       for(int x=1;x<=count;x++){
-                          // System.out.println(x);
-                          data= rs.getString(x);
-                          row[x-1] = data;
-                         // System.out.println(x+"**"+data);
-                           //System.out.println(Arrays.toString(row));
-                       }
+                        // System.out.println(rs.getString(1));
+                        for(int x=1;x<=count;x++){
+                            // System.out.println(x);
+                            data= rs.getString(x);
+                            row[x-1] = data;
+                            // System.out.println(x+"**"+data);
+                            //System.out.println(Arrays.toString(row));
+                        }
                    /*
                     String no, name, artist;
                     while(rs.next()){
@@ -95,9 +95,9 @@ public class tables extends JFrame {
                     */
 
 
-                       model.addRow(row);
-                      // System.out.println(Arrays.toString(row));
-                   }
+                        model.addRow(row);
+                        // System.out.println(Arrays.toString(row));
+                    }
 
 
 
@@ -112,13 +112,13 @@ public class tables extends JFrame {
 
             }
         });
-        clearButton.addActionListener(new ActionListener() {
+        borrarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 table1.setModel(new DefaultTableModel());
             }
         });
-        playlistTrackButton.addActionListener(new ActionListener() {
+        playlistTrackbttn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
@@ -146,60 +146,7 @@ public class tables extends JFrame {
 
                     int count=0;
                     Statement st= con.createStatement();
-                    String query="select * from PlaylistTrack;";
-                    ResultSet rs = st.executeQuery(query);
-                    ResultSetMetaData rsmd= rs.getMetaData();
-                    DefaultTableModel model = (DefaultTableModel) table1.getModel();
-                    int cols=rsmd.getColumnCount();
-                    String[] colName=new String [cols];
-                    for(int i=0; i<cols;i++) {
-                        colName[i] = rsmd.getColumnName(i + 1);
-                        count++;
-
-                    }
-                    model.setColumnIdentifiers(colName);
-                    String data;
-                    String[] row=new String[count];
-
-                    while (rs.next()){
-                        for(int x=1;x<=count;x++){
-                            data= rs.getString(x);
-                            row[x-1] = data;
-                          //  System.out.println(Arrays.toString(row));
-                        }
-
-
-
-                        model.addRow(row);
-
-                    }
-
-                } catch (SQLException | ClassNotFoundException e) {
-                    throw new RuntimeException(e);
-                }
-
-
-
-            }
-        });
-
-
-
-
-        trackButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-
-
-                Connection con= null;
-
-                try {
-                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                    con = DriverManager.getConnection("jdbc:sqlserver://REN-LIZ-27\\SQLEXPRESS:1433;DatabaseName=Chinook;integratedSecurity=true;encrypt=true;trustServerCertificate=true");
-
-                    int count=0;
-                    Statement st= con.createStatement();
-                    String query="select * from Track;";
+                    String query="select * from LogsPlaylistTrack;";
                     ResultSet rs = st.executeQuery(query);
                     ResultSetMetaData rsmd= rs.getMetaData();
                     DefaultTableModel model = (DefaultTableModel) table1.getModel();
@@ -238,7 +185,60 @@ public class tables extends JFrame {
 
 
 
-        playlistButton.addActionListener(new ActionListener() {
+
+        Trackbttn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+
+                Connection con= null;
+
+                try {
+                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                    con = DriverManager.getConnection("jdbc:sqlserver://REN-LIZ-27\\SQLEXPRESS:1433;DatabaseName=Chinook;integratedSecurity=true;encrypt=true;trustServerCertificate=true");
+
+                    int count=0;
+                    Statement st= con.createStatement();
+                    String query="select * from LogsTrack;";
+                    ResultSet rs = st.executeQuery(query);
+                    ResultSetMetaData rsmd= rs.getMetaData();
+                    DefaultTableModel model = (DefaultTableModel) table1.getModel();
+                    int cols=rsmd.getColumnCount();
+                    String[] colName=new String [cols];
+                    for(int i=0; i<cols;i++) {
+                        colName[i] = rsmd.getColumnName(i + 1);
+                        count++;
+
+                    }
+                    model.setColumnIdentifiers(colName);
+                    String data;
+                    String[] row=new String[count];
+
+                    while (rs.next()){
+                        for(int x=1;x<=count;x++){
+                            data= rs.getString(x);
+                            row[x-1] = data;
+                            //  System.out.println(Arrays.toString(row));
+                        }
+
+
+
+                        model.addRow(row);
+
+                    }
+
+                } catch (SQLException | ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+
+
+
+            }
+        });
+
+
+
+        playlistbttn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
@@ -266,7 +266,7 @@ public class tables extends JFrame {
 
                     int count=0;
                     Statement st= con.createStatement();
-                    String query="select * from Playlist;";
+                    String query="select * from LogsPlaylist;";
                     ResultSet rs = st.executeQuery(query);
                     ResultSetMetaData rsmd= rs.getMetaData();
                     DefaultTableModel model = (DefaultTableModel) table1.getModel();
@@ -305,7 +305,7 @@ public class tables extends JFrame {
 
 
 
-        mediaTypeButton.addActionListener(new ActionListener() {
+        mediabttn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
@@ -333,7 +333,7 @@ public class tables extends JFrame {
 
                     int count=0;
                     Statement st= con.createStatement();
-                    String query="select * from MediaType;";
+                    String query="select * from LogsMediaType;";
                     ResultSet rs = st.executeQuery(query);
                     ResultSetMetaData rsmd= rs.getMetaData();
                     DefaultTableModel model = (DefaultTableModel) table1.getModel();
@@ -370,7 +370,7 @@ public class tables extends JFrame {
             }
         });
 
-        invoiceLineButton.addActionListener(new ActionListener() {
+        invoiceLinebttn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
@@ -381,7 +381,7 @@ public class tables extends JFrame {
 
                     int count=0;
                     Statement st= con.createStatement();
-                    String query="select * from InvoiceLine;";
+                    String query="select * from LogsInvoiceLine;";
                     ResultSet rs = st.executeQuery(query);
                     ResultSetMetaData rsmd= rs.getMetaData();
                     DefaultTableModel model = (DefaultTableModel) table1.getModel();
@@ -417,7 +417,7 @@ public class tables extends JFrame {
 
             }
         });
-        invoice.addActionListener(new ActionListener() {
+        invoicebttn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
@@ -428,55 +428,7 @@ public class tables extends JFrame {
 
                     int count=0;
                     Statement st= con.createStatement();
-                    String query="select * from invoice;";
-                    ResultSet rs = st.executeQuery(query);
-                    ResultSetMetaData rsmd= rs.getMetaData();
-                    DefaultTableModel model = (DefaultTableModel) table1.getModel();
-                    int cols=rsmd.getColumnCount();
-                    String[] colName=new String [cols];
-                    for(int i=0; i<cols;i++) {
-                        colName[i] = rsmd.getColumnName(i + 1);
-                        count++;
-
-                    }
-                    model.setColumnIdentifiers(colName);
-                    String data;
-                    String[] row=new String[count];
-
-                    while (rs.next()){
-                        for(int x=1;x<=count;x++){
-                            data= rs.getString(x);
-                            row[x-1] = data;
-                            //  System.out.println(Arrays.toString(row));
-                        }
-
-
-
-                        model.addRow(row);
-
-                    }
-
-                } catch (SQLException | ClassNotFoundException e) {
-                    throw new RuntimeException(e);
-                }
-
-
-
-            }
-        });
-
-        genre.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-
-                Connection con= null;
-                try {
-                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                    con = DriverManager.getConnection("jdbc:sqlserver://REN-LIZ-27\\SQLEXPRESS:1433;DatabaseName=Chinook;integratedSecurity=true;encrypt=true;trustServerCertificate=true");
-
-                    int count=0;
-                    Statement st= con.createStatement();
-                    String query="select * from Genre;";
+                    String query="select * from LogsInvoice;";
                     ResultSet rs = st.executeQuery(query);
                     ResultSetMetaData rsmd= rs.getMetaData();
                     DefaultTableModel model = (DefaultTableModel) table1.getModel();
@@ -513,7 +465,7 @@ public class tables extends JFrame {
             }
         });
 
-        employee.addActionListener(new ActionListener() {
+        genrebttn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
@@ -524,7 +476,7 @@ public class tables extends JFrame {
 
                     int count=0;
                     Statement st= con.createStatement();
-                    String query="select * from Employee;";
+                    String query="select * from LogsGenre;";
                     ResultSet rs = st.executeQuery(query);
                     ResultSetMetaData rsmd= rs.getMetaData();
                     DefaultTableModel model = (DefaultTableModel) table1.getModel();
@@ -560,7 +512,8 @@ public class tables extends JFrame {
 
             }
         });
-        customer.addActionListener(new ActionListener() {
+
+        employeebttn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
@@ -571,7 +524,7 @@ public class tables extends JFrame {
 
                     int count=0;
                     Statement st= con.createStatement();
-                    String query="select * from Customer;";
+                    String query="select * from LogsEmployee;";
                     ResultSet rs = st.executeQuery(query);
                     ResultSetMetaData rsmd= rs.getMetaData();
                     DefaultTableModel model = (DefaultTableModel) table1.getModel();
@@ -607,7 +560,7 @@ public class tables extends JFrame {
 
             }
         });
-        artist.addActionListener(new ActionListener() {
+        customebttn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
@@ -618,7 +571,54 @@ public class tables extends JFrame {
 
                     int count=0;
                     Statement st= con.createStatement();
-                    String query="select * from Artist;";
+                    String query="select * from LogsCustomers;";
+                    ResultSet rs = st.executeQuery(query);
+                    ResultSetMetaData rsmd= rs.getMetaData();
+                    DefaultTableModel model = (DefaultTableModel) table1.getModel();
+                    int cols=rsmd.getColumnCount();
+                    String[] colName=new String [cols];
+                    for(int i=0; i<cols;i++) {
+                        colName[i] = rsmd.getColumnName(i + 1);
+                        count++;
+
+                    }
+                    model.setColumnIdentifiers(colName);
+                    String data;
+                    String[] row=new String[count];
+
+                    while (rs.next()){
+                        for(int x=1;x<=count;x++){
+                            data= rs.getString(x);
+                            row[x-1] = data;
+                            //  System.out.println(Arrays.toString(row));
+                        }
+
+
+
+                        model.addRow(row);
+
+                    }
+
+                } catch (SQLException | ClassNotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+
+
+
+            }
+        });
+        artistbttn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                Connection con= null;
+                try {
+                    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+                    con = DriverManager.getConnection("jdbc:sqlserver://REN-LIZ-27\\SQLEXPRESS:1433;DatabaseName=Chinook;integratedSecurity=true;encrypt=true;trustServerCertificate=true");
+
+                    int count=0;
+                    Statement st= con.createStatement();
+                    String query="select * from LogsArtist;";
                     ResultSet rs = st.executeQuery(query);
                     ResultSetMetaData rsmd= rs.getMetaData();
                     DefaultTableModel model = (DefaultTableModel) table1.getModel();
