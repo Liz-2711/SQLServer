@@ -1,1 +1,1 @@
-ABC#DEF;GHI;123.
+Avg()#Binary_checksum()#Checksum()#Checksum_agg()#Count()#Count_big()#Grouping()#Grouping_Id()#Max()#Min()#Stdev()#Stdevp()#Sum()#Var()#Varp()

@@ -1,12 +1,1 @@
-@@Connections;None;Returns integer.
-@@Cpu_Busy;None;Returns integer.
-::fn_Virtualfilestats();@DatabaseId (integer, no default);@FileId (integer, no default);Returns Table.
-@@Idle;None;Returns integer.
-@@Io_Busy;None;Returns integer.
-@@Pack_Received;None;Returns integer.
-@@Pack_Sent;None;Returns integer.
-@@Packet_Errors;None;Returns integer.
-@@Timeticks;None;Returns integer.
-@@Total_Error;None;Returns integer.
-@@Total_Read;None;Returns integer.
-@@Total_Write;None;Returns integer.
+@@Connections;@@Cpu_Busy;::fn_Virtualfilestats();@@Idle;@@Io_Busy;@@Pack_Received;@@Pack_Sent;@@Packet_Errors;@@Timeticks;@@Total_Error;@@Total_Read;@@Total_Write

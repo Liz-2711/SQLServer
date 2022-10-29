@@ -1,7 +1,1 @@
-GetRoot();None;Returns HierarchyId.
-GetDescendant();Child1 (HierarchyId);Child2 (HierarchyId);Returns HierarchyId.
-IsDescendantOf();Parent (HierarchyId);Returns SqlBoolean.
-GetLevel();None;Returns SqlInt16.
-GetAncestor();Ancestor Level (integer);Returns HierarchyId.
-GetParentedValue();Old Root (HierarchyId);New Root (HierarchyId);Returns HierarchyId.
-ToString();None;Returns String.
+GetRoot();GetDescendant();IsDescendantOf();GetLevel();GetAncestor();GetParentedValue();ToString();

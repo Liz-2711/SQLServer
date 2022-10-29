@@ -26,6 +26,7 @@
         <constraints border-constraint="Center"/>
         <properties>
           <editable value="false"/>
+          <lineWrap value="true"/>
           <text value="Descripcion..."/>
         </properties>
       </component>

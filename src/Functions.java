@@ -1,6 +1,11 @@
 import javax.swing.*;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.FileNotFoundException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -21,19 +26,19 @@ public class Functions extends JFrame{
 
         DefaultMutableTreeNode SysFunctions = new DefaultMutableTreeNode("System Functions");
 
-        DefaultMutableTreeNode AF = new DefaultMutableTreeNode("Agregate Fuctions");
-        DefaultMutableTreeNode CoF = new DefaultMutableTreeNode("Configuration Fuctions");
+        DefaultMutableTreeNode AF = new DefaultMutableTreeNode("Agreggate Functions");
+        DefaultMutableTreeNode CoF = new DefaultMutableTreeNode("Configuration Functions");
         DefaultMutableTreeNode CuF = new DefaultMutableTreeNode("Cursor Functions");
-        DefaultMutableTreeNode DTF = new DefaultMutableTreeNode("Date and Time Fuctions");
-        DefaultMutableTreeNode MathF = new DefaultMutableTreeNode("Mathematical Fuctions");
-        DefaultMutableTreeNode MetaF = new DefaultMutableTreeNode("Metadata Fuctions");
-        DefaultMutableTreeNode OF = new DefaultMutableTreeNode("Other Fuctions");
-        DefaultMutableTreeNode HIF = new DefaultMutableTreeNode("Hierarchy Id Fuctions");
-        DefaultMutableTreeNode RF = new DefaultMutableTreeNode("Rowset Fuctions");
-        DefaultMutableTreeNode SecF = new DefaultMutableTreeNode("Security Fuctions");
-        DefaultMutableTreeNode StrF = new DefaultMutableTreeNode("String Fuctions");
-        DefaultMutableTreeNode SSF = new DefaultMutableTreeNode("System Statistical Fuctions");
-        DefaultMutableTreeNode TIF = new DefaultMutableTreeNode("Text and Image Fuctions");
+        DefaultMutableTreeNode DTF = new DefaultMutableTreeNode("Date and Time Functions");
+        DefaultMutableTreeNode MathF = new DefaultMutableTreeNode("Mathematical Functions");
+        DefaultMutableTreeNode MetaF = new DefaultMutableTreeNode("Metadata Functions");
+        DefaultMutableTreeNode OF = new DefaultMutableTreeNode("Other Functions");
+        DefaultMutableTreeNode HIF = new DefaultMutableTreeNode("Hierarchy Id Functions");
+        DefaultMutableTreeNode RF = new DefaultMutableTreeNode("Rowset Functions");
+        DefaultMutableTreeNode SecF = new DefaultMutableTreeNode("Security Functions");
+        DefaultMutableTreeNode StrF = new DefaultMutableTreeNode("String Functions");
+        DefaultMutableTreeNode SSF = new DefaultMutableTreeNode("System Statistical Functions");
+        DefaultMutableTreeNode TIF = new DefaultMutableTreeNode("Text and Image Functions");
 
         DefaultMutableTreeNode PAF = new DefaultMutableTreeNode("Parameters");
         DefaultMutableTreeNode PCoF = new DefaultMutableTreeNode("Parameters");
@@ -63,27 +68,56 @@ public class Functions extends JFrame{
         SSF.add(PSSF);
         TIF.add(PTIF);
 
-        SysFunctions.add(AF);
-        ArrayList<String> afArray = new ArrayList<>();
-        java.io.File fileAF = new java.io.File("src//test.txt");
-        try {
-            Scanner input = new Scanner(fileAF);
-            Scanner newline = new Scanner(fileAF);
-            Scanner primero = new Scanner(fileAF);
-            input.useDelimiter(";");
-            newline.useDelimiter(".");
-            primero.useDelimiter("#");
+        ArrayList<String> afArrayD = new ArrayList<>();
+        ArrayList<String> cofArrayD = new ArrayList<>();
+        ArrayList<String> cufArrayD = new ArrayList<>();
+        ArrayList<String> dtfArrayD = new ArrayList<>();
+        ArrayList<String> mathfArrayD = new ArrayList<>();
+        ArrayList<String> metafArrayD = new ArrayList<>();
+        ArrayList<String> ofArrayD = new ArrayList<>();
+        ArrayList<String> hifArrayD = new ArrayList<>();
+        ArrayList<String> rfArrayD = new ArrayList<>();
+        ArrayList<String> secfArrayD = new ArrayList<>();
+        ArrayList<String> strfArrayD = new ArrayList<>();
+        ArrayList<String> ssfArrayD = new ArrayList<>();
+        ArrayList<String> tifArrayD = new ArrayList<>();
 
-            /*
-            * DefaultMutableTreeNode node = new DefaultMutableTreeNode();
-                node.setUserObject(element);*/
+        SysFunctions.add(AF);
+        try {
+            ArrayList<String> afArray = new ArrayList<>();
+
+            java.io.File fileAF = new java.io.File("src//FilesFunction//AF.txt");
+            java.io.File fileAF2 = new java.io.File("src//FilesFunction//AF2.txt");
+            java.io.File fileAF3 = new java.io.File("src//FilesFunction//AF_Desc.txt");
+
+            Scanner primero = new Scanner(fileAF);
+            Scanner segundo = new Scanner(fileAF2);
+            Scanner tercero = new Scanner(fileAF3);
+
+            primero.useDelimiter(";");
+            segundo.useDelimiter("#");
+            tercero.useDelimiter(";");
 
             while (primero.hasNext()) {
                 DefaultMutableTreeNode node = new DefaultMutableTreeNode(primero.next());
                 PAF.add(node);
-                while (input.hasNext()) {
-                    DefaultMutableTreeNode n = new DefaultMutableTreeNode(input.next());
-                    node.add(n);
+            }
+
+            while (segundo.hasNext()) {
+                afArray.add(segundo.next());
+            }
+
+            while (tercero.hasNext()) {
+                afArrayD.add(tercero.next());
+            }
+
+            for (int i = 0; i < PAF.getChildCount(); i++) {
+                DefaultMutableTreeNode root = (DefaultMutableTreeNode) PAF.getChildAt(i);
+                String[] parts = afArray.get(i).split(";");
+
+                for (int j = 0; j < parts.length; j++) {
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(parts[j]);
+                    root.add(node);
                 }
             }
 
@@ -92,21 +126,576 @@ public class Functions extends JFrame{
         }
 
         SysFunctions.add(CoF);
+        try {
+            ArrayList<String> cofArray = new ArrayList<>();
+
+            java.io.File file = new java.io.File("src//FilesFunction//CoF.txt");
+            java.io.File file2 = new java.io.File("src//FilesFunction//CoF2.txt");
+            java.io.File file3 = new java.io.File("src//FilesFunction//CoF_Desc.txt");
+
+            Scanner primero = new Scanner(file);
+            Scanner segundo = new Scanner(file2);
+            Scanner tercero = new Scanner(file3);
+
+            primero.useDelimiter(";");
+            segundo.useDelimiter("#");
+            tercero.useDelimiter(";");
+
+            while (primero.hasNext()) {
+                DefaultMutableTreeNode node = new DefaultMutableTreeNode(primero.next());
+                PCoF.add(node);
+            }
+
+            while (segundo.hasNext()) {
+                cofArray.add(segundo.next());
+            }
+
+            while (tercero.hasNext()) {
+                cofArrayD.add(tercero.next());
+            }
+
+            for (int i = 0; i < PCoF.getChildCount(); i++) {
+                DefaultMutableTreeNode root = (DefaultMutableTreeNode) PCoF.getChildAt(i);
+                String[] parts = cofArray.get(i).split(";");
+
+                for (int j = 0; j < parts.length; j++) {
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(parts[j]);
+                    root.add(node);
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         SysFunctions.add(CuF);
+        try {
+            ArrayList<String> cufArray = new ArrayList<>();
+
+            java.io.File file = new java.io.File("src//FilesFunction//CuF.txt");
+            java.io.File file2 = new java.io.File("src//FilesFunction//CuF2.txt");
+            java.io.File file3 = new java.io.File("src//FilesFunction//CuF_Desc.txt");
+
+            Scanner primero = new Scanner(file);
+            Scanner segundo = new Scanner(file2);
+            Scanner tercero = new Scanner(file3);
+
+            primero.useDelimiter(";");
+            segundo.useDelimiter("#");
+            tercero.useDelimiter(";");
+
+            while (primero.hasNext()) {
+                DefaultMutableTreeNode node = new DefaultMutableTreeNode(primero.next());
+                PCuF.add(node);
+            }
+
+            while (segundo.hasNext()) {
+                cufArray.add(segundo.next());
+            }
+
+            while (tercero.hasNext()) {
+                cufArrayD.add(tercero.next());
+            }
+
+            for (int i = 0; i < PCuF.getChildCount(); i++) {
+                DefaultMutableTreeNode root = (DefaultMutableTreeNode) PCuF.getChildAt(i);
+                String[] parts = cufArray.get(i).split(";");
+
+                for (int j = 0; j < parts.length; j++) {
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(parts[j]);
+                    root.add(node);
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         SysFunctions.add(DTF);
+        try {
+            ArrayList<String> dtfArray = new ArrayList<>();
+
+            java.io.File file = new java.io.File("src//FilesFunction//DTF.txt");
+            java.io.File file2 = new java.io.File("src//FilesFunction//DTF2.txt");
+            java.io.File file3 = new java.io.File("src//FilesFunction//DTF_Desc.txt");
+
+            Scanner primero = new Scanner(file);
+            Scanner segundo = new Scanner(file2);
+            Scanner tercero = new Scanner(file3);
+
+            primero.useDelimiter(";");
+            segundo.useDelimiter("#");
+            tercero.useDelimiter(";");
+
+            while (primero.hasNext()) {
+                DefaultMutableTreeNode node = new DefaultMutableTreeNode(primero.next());
+                PDTF.add(node);
+            }
+
+            while (segundo.hasNext()) {
+                dtfArray.add(segundo.next());
+            }
+
+            while (tercero.hasNext()) {
+                dtfArrayD.add(tercero.next());
+            }
+
+            for (int i = 0; i < PDTF.getChildCount(); i++) {
+                DefaultMutableTreeNode root = (DefaultMutableTreeNode) PDTF.getChildAt(i);
+                String[] parts = dtfArray.get(i).split(";");
+
+                for (int j = 0; j < parts.length; j++) {
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(parts[j]);
+                    root.add(node);
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         SysFunctions.add(MathF);
+        try {
+            ArrayList<String> mathfArray = new ArrayList<>();
+
+            java.io.File file = new java.io.File("src//FilesFunction//MathF.txt");
+            java.io.File file2 = new java.io.File("src//FilesFunction//MathF2.txt");
+            java.io.File file3 = new java.io.File("src//FilesFunction//MathF_Desc.txt");
+
+            Scanner primero = new Scanner(file);
+            Scanner segundo = new Scanner(file2);
+            Scanner tercero = new Scanner(file3);
+
+            primero.useDelimiter(";");
+            segundo.useDelimiter("#");
+            tercero.useDelimiter(";");
+
+            while (primero.hasNext()) {
+                DefaultMutableTreeNode node = new DefaultMutableTreeNode(primero.next());
+                PMathF.add(node);
+            }
+
+            while (segundo.hasNext()) {
+                mathfArray.add(segundo.next());
+            }
+
+            while (tercero.hasNext()) {
+                mathfArrayD.add(tercero.next());
+            }
+
+            for (int i = 0; i < PMathF.getChildCount(); i++) {
+                DefaultMutableTreeNode root = (DefaultMutableTreeNode) PMathF.getChildAt(i);
+                String[] parts = mathfArray.get(i).split(";");
+
+                for (int j = 0; j < parts.length; j++) {
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(parts[j]);
+                    root.add(node);
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         SysFunctions.add(MetaF);
+        try {
+            ArrayList<String> metafArray = new ArrayList<>();
+
+            java.io.File file = new java.io.File("src//FilesFunction//MetaF.txt");
+            java.io.File file2 = new java.io.File("src//FilesFunction//MetaF2.txt");
+            java.io.File file3 = new java.io.File("src//FilesFunction//MetaF_Desc.txt");
+
+            Scanner primero = new Scanner(file);
+            Scanner segundo = new Scanner(file2);
+            Scanner tercero = new Scanner(file3);
+
+            primero.useDelimiter(";");
+            segundo.useDelimiter("#");
+            tercero.useDelimiter(";");
+
+            while (primero.hasNext()) {
+                DefaultMutableTreeNode node = new DefaultMutableTreeNode(primero.next());
+                PMetaF.add(node);
+            }
+
+            while (segundo.hasNext()) {
+                metafArray.add(segundo.next());
+            }
+
+            while (tercero.hasNext()) {
+                metafArrayD.add(tercero.next());
+            }
+
+            for (int i = 0; i < PMetaF.getChildCount(); i++) {
+                DefaultMutableTreeNode root = (DefaultMutableTreeNode) PMetaF.getChildAt(i);
+                String[] parts = metafArray.get(i).split(";");
+
+                for (int j = 0; j < parts.length; j++) {
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(parts[j]);
+                    root.add(node);
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         SysFunctions.add(OF);
+        try {
+            ArrayList<String> ofArray = new ArrayList<>();
+
+            java.io.File file = new java.io.File("src//FilesFunction//OF.txt");
+            java.io.File file2 = new java.io.File("src//FilesFunction//OF2.txt");
+            java.io.File file3 = new java.io.File("src//FilesFunction//OF_Desc.txt");
+
+            Scanner primero = new Scanner(file);
+            Scanner segundo = new Scanner(file2);
+            Scanner tercero = new Scanner(file3);
+
+            primero.useDelimiter(";");
+            segundo.useDelimiter("#");
+            tercero.useDelimiter(";");
+
+            while (primero.hasNext()) {
+                DefaultMutableTreeNode node = new DefaultMutableTreeNode(primero.next());
+                POF.add(node);
+            }
+
+            while (segundo.hasNext()) {
+                ofArray.add(segundo.next());
+            }
+
+            while (tercero.hasNext()) {
+                ofArrayD.add(tercero.next());
+            }
+
+            for (int i = 0; i < POF.getChildCount(); i++) {
+                DefaultMutableTreeNode root = (DefaultMutableTreeNode) POF.getChildAt(i);
+                String[] parts = ofArray.get(i).split(";");
+
+                for (int j = 0; j < parts.length; j++) {
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(parts[j]);
+                    root.add(node);
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         SysFunctions.add(HIF);
+        try {
+            ArrayList<String> hifArray = new ArrayList<>();
+
+            java.io.File file = new java.io.File("src//FilesFunction//HIF.txt");
+            java.io.File file2 = new java.io.File("src//FilesFunction//HIF2.txt");
+            java.io.File file3 = new java.io.File("src//FilesFunction//HIF_Desc.txt");
+
+            Scanner primero = new Scanner(file);
+            Scanner segundo = new Scanner(file2);
+            Scanner tercero = new Scanner(file3);
+
+            primero.useDelimiter(";");
+            segundo.useDelimiter("#");
+            tercero.useDelimiter(";");
+
+            while (primero.hasNext()) {
+                DefaultMutableTreeNode node = new DefaultMutableTreeNode(primero.next());
+                PHIF.add(node);
+            }
+
+            while (segundo.hasNext()) {
+                hifArray.add(segundo.next());
+            }
+
+            while (tercero.hasNext()) {
+                hifArrayD.add(tercero.next());
+            }
+
+            for (int i = 0; i < PHIF.getChildCount(); i++) {
+                DefaultMutableTreeNode root = (DefaultMutableTreeNode) PHIF.getChildAt(i);
+                String[] parts = hifArray.get(i).split(";");
+
+                for (int j = 0; j < parts.length; j++) {
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(parts[j]);
+                    root.add(node);
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         SysFunctions.add(RF);
+        try {
+            ArrayList<String> rfArray = new ArrayList<>();
+
+            java.io.File file = new java.io.File("src//FilesFunction//RF.txt");
+            java.io.File file2 = new java.io.File("src//FilesFunction//RF2.txt");
+            java.io.File file3 = new java.io.File("src//FilesFunction//RF_Desc.txt");
+
+            Scanner primero = new Scanner(file);
+            Scanner segundo = new Scanner(file2);
+            Scanner tercero = new Scanner(file3);
+
+            primero.useDelimiter(";");
+            segundo.useDelimiter("#");
+            tercero.useDelimiter(";");
+
+            while (primero.hasNext()) {
+                DefaultMutableTreeNode node = new DefaultMutableTreeNode(primero.next());
+                PRF.add(node);
+            }
+
+            while (segundo.hasNext()) {
+                rfArray.add(segundo.next());
+            }
+
+            while (tercero.hasNext()) {
+                rfArrayD.add(tercero.next());
+            }
+
+            for (int i = 0; i < PRF.getChildCount(); i++) {
+                DefaultMutableTreeNode root = (DefaultMutableTreeNode) PRF.getChildAt(i);
+                String[] parts = rfArray.get(i).split(";");
+
+                for (int j = 0; j < parts.length; j++) {
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(parts[j]);
+                    root.add(node);
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         SysFunctions.add(SecF);
+        try {
+            ArrayList<String> secfArray = new ArrayList<>();
+
+            java.io.File file = new java.io.File("src//FilesFunction//SecF.txt");
+            java.io.File file2 = new java.io.File("src//FilesFunction//SecF2.txt");
+            java.io.File file3 = new java.io.File("src//FilesFunction//SecF_Desc.txt");
+
+            Scanner primero = new Scanner(file);
+            Scanner segundo = new Scanner(file2);
+            Scanner tercero = new Scanner(file3);
+
+            primero.useDelimiter(";");
+            segundo.useDelimiter("#");
+            tercero.useDelimiter(";");
+
+            while (primero.hasNext()) {
+                DefaultMutableTreeNode node = new DefaultMutableTreeNode(primero.next());
+                PSecF.add(node);
+            }
+
+            while (segundo.hasNext()) {
+                secfArray.add(segundo.next());
+            }
+
+            while (tercero.hasNext()) {
+                secfArrayD.add(tercero.next());
+            }
+
+            for (int i = 0; i < PSecF.getChildCount(); i++) {
+                DefaultMutableTreeNode root = (DefaultMutableTreeNode) PSecF.getChildAt(i);
+                String[] parts = secfArray.get(i).split(";");
+
+                for (int j = 0; j < parts.length; j++) {
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(parts[j]);
+                    root.add(node);
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         SysFunctions.add(StrF);
+        try {
+            ArrayList<String> strfArray = new ArrayList<>();
+
+            java.io.File file = new java.io.File("src//FilesFunction//StrF.txt");
+            java.io.File file2 = new java.io.File("src//FilesFunction//StrF2.txt");
+            java.io.File file3 = new java.io.File("src//FilesFunction//StrF_Desc.txt");
+
+            Scanner primero = new Scanner(file);
+            Scanner segundo = new Scanner(file2);
+            Scanner tercero = new Scanner(file3);
+
+            primero.useDelimiter(";");
+            segundo.useDelimiter("#");
+            tercero.useDelimiter(";");
+
+            while (primero.hasNext()) {
+                DefaultMutableTreeNode node = new DefaultMutableTreeNode(primero.next());
+                PStrF.add(node);
+            }
+
+            while (segundo.hasNext()) {
+                strfArray.add(segundo.next());
+            }
+
+            while (tercero.hasNext()) {
+                strfArrayD.add(tercero.next());
+            }
+
+            for (int i = 0; i < PStrF.getChildCount(); i++) {
+                DefaultMutableTreeNode root = (DefaultMutableTreeNode) PStrF.getChildAt(i);
+                String[] parts = strfArray.get(i).split(";");
+
+                for (int j = 0; j < parts.length; j++) {
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(parts[j]);
+                    root.add(node);
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         SysFunctions.add(SSF);
+        try {
+            ArrayList<String> ssfArray = new ArrayList<>();
+
+            java.io.File file = new java.io.File("src//FilesFunction//SSF.txt");
+            java.io.File file2 = new java.io.File("src//FilesFunction//SSF2.txt");
+            java.io.File file3 = new java.io.File("src//FilesFunction//SSF_Desc.txt");
+
+            Scanner primero = new Scanner(file);
+            Scanner segundo = new Scanner(file2);
+            Scanner tercero = new Scanner(file3);
+
+            primero.useDelimiter(";");
+            segundo.useDelimiter("#");
+            tercero.useDelimiter(";");
+
+            while (primero.hasNext()) {
+                DefaultMutableTreeNode node = new DefaultMutableTreeNode(primero.next());
+                PSSF.add(node);
+            }
+
+            while (segundo.hasNext()) {
+                ssfArray.add(segundo.next());
+            }
+
+            while (tercero.hasNext()) {
+                ssfArrayD.add(tercero.next());
+            }
+
+            for (int i = 0; i < PSSF.getChildCount(); i++) {
+                DefaultMutableTreeNode root = (DefaultMutableTreeNode) PSSF.getChildAt(i);
+                String[] parts = ssfArray.get(i).split(";");
+
+                for (int j = 0; j < parts.length; j++) {
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(parts[j]);
+                    root.add(node);
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
         SysFunctions.add(TIF);
+        try {
+            ArrayList<String> tifArray = new ArrayList<>();
+
+            java.io.File file = new java.io.File("src//FilesFunction//TIF.txt");
+            java.io.File file2 = new java.io.File("src//FilesFunction//TIF2.txt");
+            java.io.File file3 = new java.io.File("src//FilesFunction//TIF_Desc.txt");
+
+            Scanner primero = new Scanner(file);
+            Scanner segundo = new Scanner(file2);
+            Scanner tercero = new Scanner(file3);
+
+            primero.useDelimiter(";");
+            segundo.useDelimiter("#");
+            tercero.useDelimiter(";");
+
+            while (primero.hasNext()) {
+                DefaultMutableTreeNode node = new DefaultMutableTreeNode(primero.next());
+                PTIF.add(node);
+            }
+
+            while (segundo.hasNext()) {
+                tifArray.add(segundo.next());
+            }
+
+            while (tercero.hasNext()) {
+                tifArrayD.add(tercero.next());
+            }
+
+            for (int i = 0; i < PTIF.getChildCount(); i++) {
+                DefaultMutableTreeNode root = (DefaultMutableTreeNode) PTIF.getChildAt(i);
+                String[] parts = tifArray.get(i).split(";");
+
+                for (int j = 0; j < parts.length; j++) {
+                    DefaultMutableTreeNode node = new DefaultMutableTreeNode(parts[j]);
+                    root.add(node);
+                }
+            }
+
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
         DefaultTreeModel model = new DefaultTreeModel(SysFunctions);
         FuncionesArbol.setModel(model);
 
+        FuncionesArbol.addTreeSelectionListener(new TreeSelectionListener() {
+
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode)FuncionesArbol.getLastSelectedPathComponent();
+
+                int i = selectedNode.getParent().getIndex(selectedNode);
+
+                if(selectedNode.getParent().getParent().toString().equals("Agreggate Functions")) {
+                    txtDescripcion.setText(afArrayD.get(i));
+                }
+                else if(selectedNode.getParent().getParent().toString().equals("Configuration Functions")) {
+                    txtDescripcion.setText(cofArrayD.get(i));
+                }
+                else if(selectedNode.getParent().getParent().toString().equals("Cursor Functions")) {
+                    txtDescripcion.setText(cufArrayD.get(i));
+                }
+                else if(selectedNode.getParent().getParent().toString().equals("Date and Time Functions")) {
+                    txtDescripcion.setText(dtfArrayD.get(i));
+                }
+                else if(selectedNode.getParent().getParent().toString().equals("Mathematical Functions")) {
+                    txtDescripcion.setText(mathfArrayD.get(i));
+                }
+                else if(selectedNode.getParent().getParent().toString().equals("Metadata Functions")) {
+                    txtDescripcion.setText(metafArrayD.get(i));
+                }
+                else if(selectedNode.getParent().getParent().toString().equals("Other Functions")) {
+                    txtDescripcion.setText(ofArrayD.get(i));
+                }
+                else if(selectedNode.getParent().getParent().toString().equals("Hierarchy Id Functions")) {
+                    txtDescripcion.setText(hifArrayD.get(i));
+                }
+                else if(selectedNode.getParent().getParent().toString().equals("Rowset Functions")) {
+                    txtDescripcion.setText(rfArrayD.get(i));
+                }
+                else if(selectedNode.getParent().getParent().toString().equals("Security Functions")) {
+                    txtDescripcion.setText(secfArrayD.get(i));
+                }
+                else if(selectedNode.getParent().getParent().toString().equals("String Functions")) {
+                    txtDescripcion.setText(strfArrayD.get(i));
+                }
+                else if(selectedNode.getParent().getParent().toString().equals("System Statistical Functions")) {
+                    txtDescripcion.setText(ssfArrayD.get(i));
+                }
+                else if(selectedNode.getParent().getParent().toString().equals("Text and Image Functions")) {
+                    txtDescripcion.setText(tifArrayD.get(i));
+                }
+                else {
+                    txtDescripcion.setText("Descripcion...");
+                }
+            }
+        });
     }
 
 }

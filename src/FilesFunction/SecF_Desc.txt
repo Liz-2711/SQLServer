@@ -1,13 +1,1 @@
-::fn_Trace_Geteventinfo() Returns a table of the events traced;
-::fn_Trace_Getfilterinfo() Returns a table of the filters applied to a specified trace;
-::fn_Trace_Getinfo() Returns the properties of a specified trace or existing traces;
-::fn_Trace_Gettable() Returns trace file information in a table format;
-Has_Dbaccess() Returns 1 if the user has access to the database, 0 if the user has no access to the database, and NULL if the database name is not valid;
-original_db_name() Returns the database name specified by the user in the database connection string;
-Is_Member() Determines Windows group membership by examining an access token that is created by Windows;
-Is_Srvrolemember() Determines whether the current user can perform an action requiring the server role's permissions;
-Suser_Sid() Returns the security identification number (SID) for the specified login name;
-Suser_Sname() Returns the login name associated with a security identification number (SID);
-User Allows a system-supplied value for the database user name of the current user to be inserted into a table when no default value is specified;
-User_Id() Returns the identification number for a database user;
-User_Name() Returns a database user name from a specified identification number;
+::fn_Trace_Geteventinfo() Returns a table of the events traced.;::fn_Trace_Getfilterinfo() Returns a table of the filters applied to a specified trace.;::fn_Trace_Getinfo() Returns the properties of a specified trace or existing traces.;::fn_Trace_Gettable() Returns trace file information in a table format.;Has_Dbaccess() Returns 1 if the user has access to the database, 0 if the user has no access to the database, and NULL if the database name is not valid.;original_db_name() Returns the database name specified by the user in the database connection string.;Is_Member() Determines Windows group membership by examining an access token that is created by Windows.;Is_Srvrolemember() Determines whether the current user can perform an action requiring the server role's permissions.;Suser_Sid() Returns the security identification number (SID) for the specified login name.;Suser_Sname() Returns the login name associated with a security identification number (SID).;User Allows a system-supplied value for the database user name of the current user to be inserted into a table when no default value is specified.;User_Id() Returns the identification number for a database user.;User_Name() Returns a database user name from a specified identification number.;

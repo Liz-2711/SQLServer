@@ -1,3 +1,1 @@
-@@Cursor_Rows;None;Returns integer.
-Cursor_Status();'local' or 'global' or 'variable' (varchar);Cursor name (nvarchar(128)) or @CursorVariable (cursor);Returns smallint.
-@@Fetch_Status;None;Returns integer.
+@@Cursor_Rows;Cursor_Status();@@Fetch_Status

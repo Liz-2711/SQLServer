@@ -1,3 +1,1 @@
-Patindex();Search pattern literal (varchar or nvarchar);Expression to search (varchar or nvarchar);Returns integer or bignit.
-Textptr();Column name (nvarchar(128));Returns varbinary.
-Textvalid();table.column (nvarchar);Text pointer (varbinary);Returns integer.
+Patindex();Textptr();Textvalid()

@@ -1,15 +1,1 @@
-Avg()*Expression (exact numeric or approximate numeric);Returns integer, decimal, money or float.
-Binary_checksum()*Expression (any type);Returns numeric.
-Checksum()*Expression (any type);Returns integer.
-Checksum_agg()*Expression (integer);Returns integer.
-Count()*Expression (any type);Returns integer.
-Count_big()*Expression (any type);Returns bigint.
-Grouping()*Expression (any type);Returns integer.
-Grouping_Id()*Expression1 (any type);Expression2 (any type);ExpressionN (any type);Returns integer.
-Max()*Expression (any type);Returns the same type as the expression.
-Min()*Expression (any type);Returns the same type as the expression.
-Stdev()*Expression (exact numeric or approximate numeric);Returns float.
-Stdevp()*Expression (exact numeric or approximate numeric);Returns float.
-Sum()*Expression (exact numeric or approximate numeric);Returns integer, decimal, money or float.
-Var()*Expression (exact numeric or approximate numeric);Returns float.
-Varp()*Expression (exact numeric or approximate numeric);Returns float.
+Avg();Binary_checksum();Checksum();Checksum_agg();Count();Count_big();Grouping();Grouping_Id();Max();Min();Stdev();Stdevp();Sum();Var();Varp()

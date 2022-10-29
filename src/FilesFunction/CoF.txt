@@ -1,16 +1,1 @@
-ConnectionProperty();Property OptionName (varchar);Returns sql_variant.
-@@Datefirst;None;Returns tinyint.
-@@Dbts;None;Returns timestamp.
-@@Langid;None;Returns smallint.
-@@Language;None;Returns varchar.
-@@Lock_Timeout;None;Returns integer.
-@@Max_Connections;None;Returns integer.
-@@Max_Precision;None;Returns tinyint.
-@@Nestlevel;None;Returns integer.
-@@Options;None;Returns integer.
-@@Remserver;None;Returns varchar(256).
-@@Servername;None;Returns varchar.
-@@Servicename;None;Returns varchar.
-@@Spid;None;Returns smallint.
-@@Textsize;None;Returns integer.
-@@Version;None;Returns varchar.
+ConnectionProperty();@@Datefirst;@@Dbts;@@Langid;@@Language;@@Lock_Timeout;@@Max_Connections;@@Max_Precision;@@Nestlevel;@@Options;@@Remserver;@@Servername;@@Servicename;@@Spid;@@Textsize;@@Version
