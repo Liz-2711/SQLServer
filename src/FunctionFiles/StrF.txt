@@ -1,0 +1,1 @@
+Ascii();Char();Charindex();Difference();Left();Len();Lower();Ltrim();Nchar();Patindex();Quotename();Replace();Replicate();Reverse();Right();Rtrim();Soundex();Space();Str();String_Split();Stuff();Substring();Unicode();Upper();Trim();ConcatWs();

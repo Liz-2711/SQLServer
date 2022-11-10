@@ -1,0 +1,1 @@
+Abs();Acos();Asin();Atan();Atn2();Ceiling();Cos();Cot();Degrees();Exp();Floor();Log();Log10();Pi();Power();Radians();Rand();Round();Sign();Sin();Sqrt();Square();Tan();

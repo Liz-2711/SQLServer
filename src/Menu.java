@@ -14,14 +14,15 @@ public class Menu extends JFrame {
     private JButton procedimientosAlmaacenadosButton;
     private JButton secuenciasOGeneradoresButton;
     private JPanel panel1;
+    private JButton btnConexiones;
 
-    public Menu(String user) {
+    public Menu(String user, String pass) {
 
         setContentPane(panel1);
         tablasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                JFrame frame=  new tables(user);
+                JFrame frame=  new tables(user, pass);
                 frame.setSize(1500,800);
                 frame.setVisible(true);
             }
@@ -31,32 +32,34 @@ public class Menu extends JFrame {
         indicesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                JFrame frame=  new tables(user);
+                JFrame frame=  new Indices(user, pass);
                 frame.setSize(800,800);
                 frame.setVisible(true);
             }
         });vistasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-               // JFrame frame=  new vistas(user);
-
+                Vistas v = new Vistas(user, pass);
+                v.setSize(800, 800);
+                v.setVisible(true);
             }
         });usuariosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                JFrame frame=  new users(user);
+                JFrame frame=  new users(user, pass);
                 frame.setSize(800,800);
                 frame.setVisible(true);
             }
         });tablespacesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-              //  JFrame frame=  new tablespaces(user);
+                Tablespaces t = new Tablespaces(user, pass);
+                t.setVisible(true);
             }
         });desparadosresButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                JFrame frame=  new tables(user);
+                JFrame frame=  new TriggerLogs(user, pass);
                 frame.setSize(1500,800);
                 frame.setVisible(true);
             }
@@ -68,21 +71,32 @@ public class Menu extends JFrame {
         });funcionesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-              //  JFrame frame=  new funciones(user);
+                Funciones f = new Funciones();
+                f.setVisible(true);
+                dispose();
             }
         });secuenciasOGeneradoresButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-               // JFrame frame=  new secuencias(user);
+                JFrame frame=  new Secuencias(user, pass);
+                frame.setSize(1500,800);
+                frame.setVisible(true);
             }
         });procedimientosAlmaacenadosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                JFrame frame=  new StoredProcedure(user);
+                JFrame frame=  new StoredProcedure(user, pass);
                 frame.setSize(1500,800);
                 frame.setVisible(true);
             }
         });
 
+        btnConexiones.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Conexiones c = new Conexiones(user, pass);
+                c.setVisible(true);
+            }
+        });
     }
 }

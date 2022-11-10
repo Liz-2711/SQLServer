@@ -29,7 +29,7 @@ public class TriggerLogs extends JFrame{
     private JPanel panel1;
 
 
-    public TriggerLogs(String user){
+    public TriggerLogs(String user, String pass){
 
         setContentPane(panel1);
 
@@ -55,7 +55,7 @@ public class TriggerLogs extends JFrame{
                 */
                 try {
                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                    con = DriverManager.getConnection("jdbc:sqlserver://REN-LIZ-27\\SQLEXPRESS:1433;DatabaseName=Chinook;integratedSecurity=true;encrypt=true;trustServerCertificate=true");
+                    con = DriverManager.getConnection("jdbc:sqlserver://localhost\\SQLEXPRESS:1433;database=Chinook;encrypt=true;trustServerCertificate=true", user, pass);
 
                     int count=0;
                     Statement st= con.createStatement();
@@ -142,7 +142,7 @@ public class TriggerLogs extends JFrame{
                 */
                 try {
                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                    con = DriverManager.getConnection("jdbc:sqlserver://REN-LIZ-27\\SQLEXPRESS:1433;DatabaseName=Chinook;integratedSecurity=true;encrypt=true;trustServerCertificate=true");
+                    con = DriverManager.getConnection("jdbc:sqlserver://localhost\\SQLEXPRESS:1433;database=Chinook;encrypt=true;trustServerCertificate=true", user, pass);
 
                     int count=0;
                     Statement st= con.createStatement();
@@ -195,7 +195,7 @@ public class TriggerLogs extends JFrame{
 
                 try {
                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                    con = DriverManager.getConnection("jdbc:sqlserver://REN-LIZ-27\\SQLEXPRESS:1433;DatabaseName=Chinook;integratedSecurity=true;encrypt=true;trustServerCertificate=true");
+                    con = DriverManager.getConnection("jdbc:sqlserver://localhost\\SQLEXPRESS:1433;database=Chinook;encrypt=true;trustServerCertificate=true", user, pass);
 
                     int count=0;
                     Statement st= con.createStatement();
@@ -262,7 +262,7 @@ public class TriggerLogs extends JFrame{
                 */
                 try {
                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                    con = DriverManager.getConnection("jdbc:sqlserver://REN-LIZ-27\\SQLEXPRESS:1433;DatabaseName=Chinook;integratedSecurity=true;encrypt=true;trustServerCertificate=true");
+                    con = DriverManager.getConnection("jdbc:sqlserver://localhost\\SQLEXPRESS:1433;database=Chinook;encrypt=true;trustServerCertificate=true", user, pass);
 
                     int count=0;
                     Statement st= con.createStatement();
@@ -329,7 +329,7 @@ public class TriggerLogs extends JFrame{
                 */
                 try {
                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                    con = DriverManager.getConnection("jdbc:sqlserver://REN-LIZ-27\\SQLEXPRESS:1433;DatabaseName=Chinook;integratedSecurity=true;encrypt=true;trustServerCertificate=true");
+                    con = DriverManager.getConnection("jdbc:sqlserver://localhost\\SQLEXPRESS:1433;database=Chinook;encrypt=true;trustServerCertificate=true", user, pass);
 
                     int count=0;
                     Statement st= con.createStatement();
@@ -377,7 +377,7 @@ public class TriggerLogs extends JFrame{
                 Connection con= null;
                 try {
                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                    con = DriverManager.getConnection("jdbc:sqlserver://REN-LIZ-27\\SQLEXPRESS:1433;DatabaseName=Chinook;integratedSecurity=true;encrypt=true;trustServerCertificate=true");
+                    con = DriverManager.getConnection("jdbc:sqlserver://localhost\\SQLEXPRESS:1433;database=Chinook;encrypt=true;trustServerCertificate=true", user, pass);
 
                     int count=0;
                     Statement st= con.createStatement();
@@ -424,7 +424,7 @@ public class TriggerLogs extends JFrame{
                 Connection con= null;
                 try {
                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                    con = DriverManager.getConnection("jdbc:sqlserver://REN-LIZ-27\\SQLEXPRESS:1433;DatabaseName=Chinook;integratedSecurity=true;encrypt=true;trustServerCertificate=true");
+                    con = DriverManager.getConnection("jdbc:sqlserver://localhost\\SQLEXPRESS:1433;database=Chinook;encrypt=true;trustServerCertificate=true", user, pass);
 
                     int count=0;
                     Statement st= con.createStatement();
@@ -472,7 +472,7 @@ public class TriggerLogs extends JFrame{
                 Connection con= null;
                 try {
                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                    con = DriverManager.getConnection("jdbc:sqlserver://REN-LIZ-27\\SQLEXPRESS:1433;DatabaseName=Chinook;integratedSecurity=true;encrypt=true;trustServerCertificate=true");
+                    con = DriverManager.getConnection("jdbc:sqlserver://localhost\\SQLEXPRESS:1433;database=Chinook;encrypt=true;trustServerCertificate=true", user, pass);
 
                     int count=0;
                     Statement st= con.createStatement();
@@ -520,7 +520,7 @@ public class TriggerLogs extends JFrame{
                 Connection con= null;
                 try {
                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                    con = DriverManager.getConnection("jdbc:sqlserver://REN-LIZ-27\\SQLEXPRESS:1433;DatabaseName=Chinook;integratedSecurity=true;encrypt=true;trustServerCertificate=true");
+                    con = DriverManager.getConnection("jdbc:sqlserver://localhost\\SQLEXPRESS:1433;database=Chinook;encrypt=true;trustServerCertificate=true", user, pass);
 
                     int count=0;
                     Statement st= con.createStatement();
@@ -567,7 +567,7 @@ public class TriggerLogs extends JFrame{
                 Connection con= null;
                 try {
                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                    con = DriverManager.getConnection("jdbc:sqlserver://REN-LIZ-27\\SQLEXPRESS:1433;DatabaseName=Chinook;integratedSecurity=true;encrypt=true;trustServerCertificate=true");
+                    con = DriverManager.getConnection("jdbc:sqlserver://localhost\\SQLEXPRESS:1433;database=Chinook;encrypt=true;trustServerCertificate=true", user, pass);
 
                     int count=0;
                     Statement st= con.createStatement();
@@ -614,7 +614,7 @@ public class TriggerLogs extends JFrame{
                 Connection con= null;
                 try {
                     Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-                    con = DriverManager.getConnection("jdbc:sqlserver://REN-LIZ-27\\SQLEXPRESS:1433;DatabaseName=Chinook;integratedSecurity=true;encrypt=true;trustServerCertificate=true");
+                    con = DriverManager.getConnection("jdbc:sqlserver://localhost\\SQLEXPRESS:1433;database=Chinook;encrypt=true;trustServerCertificate=true", user, pass);
 
                     int count=0;
                     Statement st= con.createStatement();

@@ -1,0 +1,1 @@
+Current_Timestamp;Dateadd();Datediff();Datename();Datepart();Day();Getdate();Getutcdate();Isdate();Month();Sysdatetime();Sysdatetimeoffset();Sysutcdatetime();Switchoffset();Todatetimeoffset();Year();

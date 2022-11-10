@@ -1,0 +1,1 @@
+ConnectionProperty();@@Datefirst;@@Dbts;@@Langid;@@Language;@@Lock_Timeout;@@Max_Connections;@@Max_Precision;@@Nestlevel;@@Options;@@Remserver;@@Servername;@@Servicename;@@Spid;@@Textsize;@@Version

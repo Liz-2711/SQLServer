@@ -1,0 +1,1 @@
+::fn_Trace_Geteventinfo();::fn_Trace_Getfilterinfo();::fn_Trace_Getinfo();::fn_Trace_Gettable();Has_Dbaccess();original_db_name();Is_Member();Is_Srvrolemember();Suser_Sid();Suser_Sname();User;User_Id();User_Name()

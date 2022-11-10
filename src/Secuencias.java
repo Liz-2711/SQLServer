@@ -1,34 +1,48 @@
-
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.*;
 
-import javax.swing.*;
-
-import javax.swing.table.DefaultTableModel;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Arrays;
-public class users extends  JFrame{
+public class Secuencias extends JFrame{
     private JTable table1;
-    private JButton mostrarUsuariosButton;
-    private JButton borrarButton;
     private JPanel panel1;
+    private JButton mostrarSecuenciasButton;
+    private JButton menuPrincipalButton;
 
-    public users(String user, String pass){
+    /*CREATE SEQUENCE PLId_Count
 
-    setContentPane(panel1);
-        borrarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                table1.setModel(new DefaultTableModel());
-            }
-        });
+AS tinyint
 
-        mostrarUsuariosButton.addActionListener(new ActionListener() {
+START WITH 19
+
+INCREMENT BY 1
+
+GO
+
+Select* from Playlist
+
+SET IDENTITY_INSERT Playlist ON
+Insert into Playlist(PlaylistId,Name)
+VALUES(NEXT VALUE FOR PLId_Count, 'Victoriuos')
+
+SET IDENTITY_INSERT Playlist OFF;
+
+CREATE SEQUENCE ALbId_Count
+
+AS tinyint
+
+START WITH 19
+
+INCREMENT BY 1
+
+GO
+
+*/
+
+    public Secuencias(String user, String pass) {
+        setContentPane(panel1);
+        mostrarSecuenciasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
@@ -39,7 +53,8 @@ public class users extends  JFrame{
 
                     int count=0;
                     Statement st= con.createStatement();
-                    String query="SELECT * FROM master.sys.database_principals;";
+                    String query=" SELECT * FROM sys.SEQUENCES";
+                    System.out.println(query);
                     ResultSet rs = st.executeQuery(query);
                     ResultSetMetaData rsmd= rs.getMetaData();
                     DefaultTableModel model = (DefaultTableModel) table1.getModel();
@@ -64,7 +79,6 @@ public class users extends  JFrame{
 
 
                         model.addRow(row);
-
                     }
 
                 } catch (SQLException | ClassNotFoundException e) {
@@ -72,11 +86,19 @@ public class users extends  JFrame{
                 }
 
 
+                table1.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+            }
+        });
+        menuPrincipalButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                        setVisible(false);
+                        JFrame frame=  new Menu(user, pass);
+                        frame.setSize(800,800);
+                        frame.setVisible(true);
 
             }
         });
-
-}
-
-
+    }
 }

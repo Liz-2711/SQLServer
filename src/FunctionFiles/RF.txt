@@ -1,0 +1,1 @@
+Containstable();Freetexttable();Opendatasource();Openquery();Openrowset();Openxml();String_Split();CHANGETABLE(CHANGES);CHANGETABLE(VERSION);

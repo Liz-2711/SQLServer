@@ -12,8 +12,8 @@ public class Main {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-             JFrame frame= new Menu("guest");
-             frame.setSize(800,800);
+             JFrame frame= new LoginConnection();
+             frame.setBounds(500, 200, 700, 550);
              frame.setVisible(true);
             }
         });

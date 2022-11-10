@@ -1,0 +1,1 @@
+None;Returns integer#None;Returns integer#@DatabaseId (integer, no default);@FileId (integer, no default);Returns Table#None;Returns integer#None;Returns integer#None;Returns integer#None;Returns integer#None;Returns integer#None;Returns integer#None;Returns integer#None;Returns integer#None;Returns integer

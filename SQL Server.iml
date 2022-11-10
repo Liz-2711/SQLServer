@@ -10,7 +10,25 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Documents/2022 4 Tri - uni/TBD II/sqljdbc_10.2/enu/mssql-jdbc-10.2.0.jre8.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../2022 4 Tri - uni/TBD II/sqljdbc_10.2/enu/mssql-jdbc-10.2.0.jre8.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Downloads/mssql-jdbc-11.2.0.jre8.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../Trabajos/2022/Trimestre XVI/Teoria Base de Datos II/mssql-jdbc-11.2.0.jre8.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
